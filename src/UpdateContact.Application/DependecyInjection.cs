@@ -1,0 +1,35 @@
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using UpdateContact.Application.Common.Behaviors;
+using UpdateContact.Application.Common.Messaging;
+
+namespace UpdateContact.Application;
+
+public static class DependecyInjection
+{
+    public static IServiceCollection ConfigureApplicationServices(
+        this IServiceCollection services, IConfiguration configuration)
+    {
+        var assembly = typeof(DependecyInjection).Assembly;
+
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
+
+        services.AddValidatorsFromAssembly(assembly);
+
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
+        services.AddSingleton<IEventBus>(sp =>
+        {
+            var logger = sp.GetRequiredService<ILogger<RabbitMQEventBus>>();
+            var hostname = configuration["MessageBroker:Host"]!;
+            var connectionName = configuration["MessageBroker:ConnectionName"]!;
+            return new RabbitMQEventBus(hostname, connectionName, logger);
+        });
+
+        return services;
+    }
+}
+
