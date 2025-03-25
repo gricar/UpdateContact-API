@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateContact.Infrastructure", "src\UpdateContact.Infrastructure\UpdateContact.Infrastructure.csproj", "{BB1A2444-1F11-4130-86AC-116D4D6C5C96}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateContact.Application", "src\UpdateContact.Application\UpdateContact.Application.csproj", "{771B86C4-D943-45EB-8CEE-373C2527E102}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F7E39751-96CC-4546-B5C7-7377230F5188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateContact.Domain.UnitTests", "tests\UpdateContact.Domain.UnitTests\UpdateContact.Domain.UnitTests.csproj", "{71DAEF85-17D5-4D9D-8BE4-8EF6B1795CBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{771B86C4-D943-45EB-8CEE-373C2527E102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771B86C4-D943-45EB-8CEE-373C2527E102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{771B86C4-D943-45EB-8CEE-373C2527E102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71DAEF85-17D5-4D9D-8BE4-8EF6B1795CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DAEF85-17D5-4D9D-8BE4-8EF6B1795CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DAEF85-17D5-4D9D-8BE4-8EF6B1795CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DAEF85-17D5-4D9D-8BE4-8EF6B1795CBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{EB81F441-2C67-4240-8093-4E405A6DBCB2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{BB1A2444-1F11-4130-86AC-116D4D6C5C96} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{771B86C4-D943-45EB-8CEE-373C2527E102} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{71DAEF85-17D5-4D9D-8BE4-8EF6B1795CBB} = {F7E39751-96CC-4546-B5C7-7377230F5188}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C45B283-B032-4798-8890-0D07C1BA50F9}
