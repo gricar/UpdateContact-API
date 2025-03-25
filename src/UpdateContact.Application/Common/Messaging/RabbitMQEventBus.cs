@@ -12,13 +12,13 @@ public class RabbitMQEventBus : IEventBus
     private readonly ILogger<RabbitMQEventBus> _logger;
 
     public RabbitMQEventBus(
-        string hostname,
+        string uri,
         string connectionName,
         ILogger<RabbitMQEventBus> logger)
     {
         var factory = new ConnectionFactory
         {
-            HostName = hostname,
+            Uri = new Uri(uri),
             ClientProvidedName = connectionName
         };
 
