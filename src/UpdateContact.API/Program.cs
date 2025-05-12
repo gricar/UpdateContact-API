@@ -1,3 +1,5 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Prometheus;
 using UpdateContact.API.Middlewares;
 using UpdateContact.Application;
@@ -20,5 +22,10 @@ app.UseMetricServer();
 app.UseHttpMetrics();
 
 app.MapControllers();
+
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.Run();
